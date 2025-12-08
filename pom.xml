@@ -5,8 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.provingly</groupId>
     <artifactId>luego-application-starter</artifactId>
-    <packaging>pom</packaging>
-    <version>0.0.3-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <version>0.0.4-SNAPSHOT</version>
+
+    <properties>
+        <luego.version>1.0.0-b45</luego.version>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -20,6 +24,27 @@
             <version>5.10.2</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>io.provingly</groupId>
+            <artifactId>luego_devtools_3</artifactId>
+            <version>${luego.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.provingly</groupId>
+            <artifactId>luego_buildchain_3</artifactId>
+            <version>${luego.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.provingly</groupId>
+            <artifactId>luego_runtime_3</artifactId>
+            <version>${luego.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.provingly</groupId>
+            <artifactId>luego_common_3</artifactId>
+            <version>${luego.version}</version>
+        </dependency>               
     </dependencies>
 
     <build>
@@ -28,7 +53,7 @@
                 <plugin>
                     <groupId>io.provingly</groupId>
                     <artifactId>luego-maven-plugin</artifactId>
-                    <version>0.0.3-SNAPSHOT</version>
+                    <version>0.0.4-SNAPSHOT</version>
                 </plugin>
             </plugins>
         </pluginManagement>  
@@ -38,13 +63,23 @@
                 <artifactId>luego-maven-plugin</artifactId>
                 <executions>
                     <execution>
-                        <phase>package</phase>
+                        <phase>compile</phase>
                         <goals>
-                            <goal>package</goal>
+                            <goal>compile</goal>
                         </goals>
                     </execution>
                 </executions>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.14.1</version>
+                <configuration>
+                <source>21</source>
+                <target>21</target>
+                </configuration>
+            </plugin>            
         </plugins>
     </build>    
 </project>
