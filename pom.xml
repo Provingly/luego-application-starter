@@ -6,24 +6,19 @@
     <groupId>io.provingly</groupId>
     <artifactId>luego-application-starter</artifactId>
     <packaging>jar</packaging>
-    <version>0.0.4-SNAPSHOT</version>
+    <version>0.0.5-SNAPSHOT</version>
 
     <properties>
-        <luego.version>1.0.0-b45</luego.version>
+        <luego.version>1.0.0-b46</luego.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.9</version>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.vintage</groupId>
-            <artifactId>junit-vintage-engine</artifactId>
-            <version>5.10.2</version>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.11.0-M2</version>
             <scope>test</scope>
-        </dependency>
+        </dependency> 
 
         <dependency>
             <groupId>io.provingly</groupId>
@@ -53,7 +48,7 @@
                 <plugin>
                     <groupId>io.provingly</groupId>
                     <artifactId>luego-maven-plugin</artifactId>
-                    <version>1.0.0-beta2</version>
+                    <version>1.0.0-beta3</version>
                 </plugin>
             </plugins>
         </pluginManagement>  
@@ -67,7 +62,7 @@
                         <goals>
                             <goal>compile</goal>
                         </goals>
-                    </execution>
+                    </execution>                
                 </executions>
             </plugin>
 
